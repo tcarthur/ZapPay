@@ -8,7 +8,7 @@ export default function SignIn() {
 const [offset] = useState(new Animated.ValueXY({x: 0, y: 80}));
 const [opacity] = useState(new Animated.Value(0));
 const [logo] = useState(new Animated.ValueXY({x:277,y: 277}));
-let customFonts = { 'OpenSans-Bold': require('../../assets/fonts/OpenSans-Bold.ttf')}
+
 
 
 const navigation = useNavigation();
@@ -111,7 +111,6 @@ marginBottom: 75
 submitText:{
 color: '#fff',
 fontSize: 24,
-fontFamily: 'OpenSans-Bold'
 }
 
 })

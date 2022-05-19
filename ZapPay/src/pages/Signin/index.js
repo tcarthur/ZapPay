@@ -1,6 +1,7 @@
 
 import { View, Text, Image,StyleSheet } from 'react-native'
 import React from 'react'
+let customFonts = { 'OpenSans-Bold': require('../../assets/fonts/OpenSans-Bold.ttf')}
 
 export default function SignIn() {
   return (
@@ -36,5 +37,6 @@ const style = StyleSheet.create({
     user:{
       fontSize: 25,
       color: '#fff',
+      fontFamily:'OpenSans-Black'
     },
 })
