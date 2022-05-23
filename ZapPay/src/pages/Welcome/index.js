@@ -10,7 +10,6 @@ const [opacity] = useState(new Animated.Value(0));
 const [logo] = useState(new Animated.ValueXY({x:277,y: 277}));
 
 
-
 const navigation = useNavigation();
 useEffect(()=>{
 Animated.parallel([
