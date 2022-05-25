@@ -11,19 +11,23 @@ const navigation = useNavigation();
 return (
     <View style={style.container}>
         <View style={style.topBar}>
-            <Image source={require("../../assets/logoZap.png")} 
-            style={{
+                <Image source={require("../../assets/logoZap.png")} 
+                style={{
                 width: 64,
                 height: 64,
-            }}>
-            </Image>
-            <Text style={style.user}> SEJA BEM VINDO USUÁRIO</Text>
-            <Image source={require("../../assets/exit.png")} style={{
-                width: 30,
-                height: 36,
-            }}>
-            </Image>
-        </View>
+                }}>
+                </Image>
+                <Text style={style.user}>RESUMO DO PEDIDO</Text>
+                <TouchableOpacity onPress={()=>navigation.navigate('Welcome')}>
+                    <Image source={require("../../assets/exit.png")} 
+                    onPress={()=>navigation.navigate('Welcome')}
+                    style={{
+                    width: 30,
+                    height: 36,
+                    }}>
+                    </Image>
+                </TouchableOpacity>
+            </View> 
             
         <View style={style.tabelaProdutos}>
             <View>

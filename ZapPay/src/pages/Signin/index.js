@@ -19,16 +19,18 @@ const navigation = useNavigation();
           height: 64,
         }}>
         </Image>
-        <Text style={style.user}> SEJA BEM VINDO USUÁRIO</Text>
-        <Image source={require("../../assets/exit.png")} style={{
-          width: 30,
-          height: 36,
-        }}>
-        </Image>
+          <Text style={style.user}> SEJA BEM VINDO USUÁRIO</Text>
+        <TouchableOpacity onPress={()=>navigation.navigate('Welcome')}>
+          <Image source={require("../../assets/exit.png")} style={{
+            width: 30,
+            height: 36,
+          }}>
+          </Image>
+        </TouchableOpacity>
         </View> 
 
         <View>
-          <DataTable style={{ height: '90%', paddingLeft: 25, paddingTop: 38}}>
+          <DataTable style={{ height: '90%',paddingTop: 38}}>
             <DataTable.Header>
                 <DataTable.Title>
                   <Text style = {{ fontSize: 25, fontWeight:'bold'}}>PEDIDOS</Text>
@@ -36,7 +38,7 @@ const navigation = useNavigation();
                 <DataTable.Title>
                   <Text style = {{ fontSize: 25, fontWeight:'bold'}}>DATA DO PEDIDO</Text>
                 </DataTable.Title>
-                <DataTable.Title>
+                <DataTable.Title style={{paddingLeft:45}}>
                   <Text style = {{ fontSize: 25, fontWeight:'bold'}}>VALOR</Text>
                 </DataTable.Title>
                 <DataTable.Title>
@@ -55,7 +57,7 @@ const navigation = useNavigation();
                       11/11/2022
                     </Text>
                   </DataTable.Cell>
-                  <DataTable.Cell>
+                  <DataTable.Cell style={{paddingLeft:45}}>
                     <Text style={{fontSize:28}}>
                       R$560,00
                     </Text>
