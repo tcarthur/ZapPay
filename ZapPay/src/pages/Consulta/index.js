@@ -30,24 +30,22 @@ return (
             </View> 
             
         <View style={style.tabelaProdutos}>
+            {/* PRODUTO 1 */}
             <View>
-                <View>
-                    <Text style={{fontSize: 25, margin: 20}}> PEDIDO: 987785</Text>
-                    <View style={{flexDirection: 'row'}}>
-                        <Text style= {{fontSize: 30, margin: 20}}> 27001515 - Cartão Loja Cliente 1</Text>
-                        <Text style= {{fontSize: 30, margin: 20}}> 1 unid.</Text>
-                        <Text style= {{fontSize: 30, margin: 20}}> R$300,00</Text>
+                <View style ={{flexDirection:'row',flexWrap:'nowrap',marginTop:25}}>
+                    <View style={{width:300,height:250,backgroundColor:'green'}}>
+                        
                     </View>
-                </View>
-                <View>
-                    <Text style={{fontSize: 25, margin: 20}}> PEDIDO: 987785</Text>
-                    <View style={{flexDirection: 'row'}}>
-                        <Text style= {{fontSize: 30, margin: 20}}> 27001515 - Cartão Loja Cliente 1</Text>
-                        <Text style= {{fontSize: 30, margin: 20}}> 1 unid.</Text>
-                        <Text style= {{fontSize: 30, margin: 20}}> R$300,00</Text>
+                    <View style={{flexDirection: 'column',height:250,marginLeft:25,}}>
+                        <Text style= {{fontSize: 40, fontWeight:'bold',marginBottom:20}}> PEDIDO: 987785</Text>
+                        <Text style= {{fontSize: 30, fontWeight:'bold',marginBottom:20}}> 27001515 - Cartão Loja Cliente 1</Text>
+                        <Text style= {{fontSize: 30, fontWeight:'bold',marginBottom:20}}> 1 unid.</Text>
+                        <Text style= {{fontSize: 30, fontWeight:'bold',marginBottom:20}}> R$300,00</Text>
                     </View>
                 </View>
             </View>
+
+
         </View>
 
         <View style={style.containerBtn}>
@@ -83,9 +81,11 @@ const style = StyleSheet.create({
         color: '#fff',
         },
     tabelaProdutos:{
-        width:'80%',
+        alignSelf:'center',
+        alignContent:'space-between',
+        width:'95%',
         height: '85%',
-        padding:20
+        paddingTop:40
     },
     containerBtn:{
         flexDirection: 'row',
