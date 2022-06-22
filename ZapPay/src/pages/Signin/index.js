@@ -22,21 +22,21 @@ const navigation = useNavigation();
           <Text style={style.user}> SEJA BEM VINDO USUÁRIO</Text>
         <TouchableOpacity onPress={()=>navigation.navigate('Welcome')}>
           <Image source={require("../../assets/exit.png")} style={{
-            width: 30,
-            height: 36,
+            width: 40,
+            height: 46,
           }}>
           </Image>
         </TouchableOpacity>
         </View> 
-
+        
         <View>
-          <DataTable style={{ height: '90%',paddingTop: 38}}>
+          <DataTable style={{ height: '90%',paddingTop: 38,paddingLeft:25,}}>
             <DataTable.Header>
                 <DataTable.Title>
                   <Text style = {{ fontSize: 25, fontWeight:'bold'}}>PEDIDOS</Text>
                 </DataTable.Title>
                 <DataTable.Title>
-                  <Text style = {{ fontSize: 25, fontWeight:'bold'}}>DATA DO PEDIDO</Text>
+                  <Text style = {{ fontSize: 25, fontWeight:'bold'}}>DATA PEDIDO</Text>
                 </DataTable.Title>
                 <DataTable.Title style={{paddingLeft:45}}>
                   <Text style = {{ fontSize: 25, fontWeight:'bold'}}>VALOR</Text>
@@ -45,31 +45,92 @@ const navigation = useNavigation();
                   <Text style = {{ fontSize: 25, fontWeight:'bold'}}>STATUS</Text>
                 </DataTable.Title>
             </DataTable.Header>
-            <TouchableOpacity onPress={()=>navigation.navigate('Consulta')}>
+
+            
+            <TouchableOpacity 
+            style={{marginVertical:20}}
+            onPress={()=>navigation.navigate('Consulta')}>
               <DataTable.Row >
                   <DataTable.Cell>
-                    <Text style={{fontSize:28}}>
+                    <Text style={{fontSize:30,fontWeight:'bold',}}>
                       766969
                     </Text>
                   </DataTable.Cell>
                   <DataTable.Cell>
-                    <Text style={{fontSize:28}}>
-                      11/11/2022
+                    <Text style={{fontSize:30,fontWeight:'bold',}}>
+                      25/06/2022
                     </Text>
                   </DataTable.Cell>
                   <DataTable.Cell style={{paddingLeft:45}}>
-                    <Text style={{fontSize:28}}>
-                      R$560,00
+                    <Text style={{fontSize:30,fontWeight:'bold',}}>
+                      R$900,00
                     </Text>
                   </DataTable.Cell>
                   <DataTable.Cell>
-                    <Text style={{fontSize:28}}>
-                      PAGO
+                    <Text style={{fontSize:30,fontWeight:'bold',}}>
+                      PENDENTE
                     </Text>
                   </DataTable.Cell>
               </DataTable.Row>
             </TouchableOpacity>
+
+            <TouchableOpacity 
+            style={{marginVertical:20}}
+            onPress={()=>navigation.navigate('Consulta')}>
+              <DataTable.Row >
+                  <DataTable.Cell>
+                    <Text style={{fontSize:30,fontWeight:'bold',}}>
+                      788792
+                    </Text>
+                  </DataTable.Cell>
+                  <DataTable.Cell>
+                    <Text style={{fontSize:30,fontWeight:'bold',}}>
+                      06/06/2022
+                    </Text>
+                  </DataTable.Cell>
+                  <DataTable.Cell style={{paddingLeft:45}}>
+                    <Text style={{fontSize:30,fontWeight:'bold',}}>
+                      R$560,00
+                    </Text>
+                  </DataTable.Cell>
+                  <DataTable.Cell>
+                    <Text style={{fontSize:30,fontWeight:'bold',}}>
+                      CONCLUIDO
+                    </Text>
+                  </DataTable.Cell>
+              </DataTable.Row>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+            style={{marginVertical:20}}
+            onPress={()=>navigation.navigate('Consulta')}>
+              <DataTable.Row >
+                  <DataTable.Cell>
+                    <Text style={{fontSize:30,fontWeight:'bold',}}>
+                      754483
+                    </Text>
+                  </DataTable.Cell>
+                  <DataTable.Cell>
+                    <Text style={{fontSize:30,fontWeight:'bold',}}>
+                      30/06/2022
+                    </Text>
+                  </DataTable.Cell>
+                  <DataTable.Cell style={{paddingLeft:45}}>
+                    <Text style={{fontSize:30,fontWeight:'bold',}}>
+                      R$305,00
+                    </Text>
+                  </DataTable.Cell>
+                  <DataTable.Cell>
+                    <Text style={{fontSize:30,fontWeight:'bold',}}>
+                      IMPRESSÃO
+                    </Text>
+                  </DataTable.Cell>
+              </DataTable.Row>
+            </TouchableOpacity>
+
           </DataTable>
+
+
             <View style={style.alert}> 
               <View>
                 <Image  source={require("../../assets/alert.png")} style={{

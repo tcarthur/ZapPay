@@ -20,8 +20,8 @@ return (
         <TouchableOpacity onPress={()=>navigation.navigate('Welcome')}>
         <Image source={require("../../assets/exit.png")} 
         style={{
-            width: 30,
-            height: 36,
+            width: 40,
+            height: 46,
         }}>
         </Image>
         </TouchableOpacity>
