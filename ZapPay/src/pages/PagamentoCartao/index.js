@@ -2,7 +2,7 @@ import { View, Text,StyleSheet,Image,TouchableOpacity,TextInput,Button} from 're
 import React, { useState } from 'react'
 import { useNavigation, } from '@react-navigation/native'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import CreditCardRegister from './creditCardRegister';
+import Formulario from './formulario';
 
 function HomeScreen() {
     return (
@@ -15,7 +15,7 @@ function HomeScreen() {
 function CadastroScreen() {
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <creditCardRegister/>
+            <Formulario/>
         </View>
     )
 }
@@ -60,7 +60,7 @@ return (
             </View>
                                             {/* BOTOES AVANCAR E VOLTAR */}
             <View style={style.containerBtn}>
-                <TouchableOpacity
+                {/* <TouchableOpacity
                 onPress={() => navigation.navigate('SelecionarPagamento')}
                 >
                     <Text style ={style.btnVoltar}>VOLTAR</Text>
@@ -69,7 +69,7 @@ return (
                 onPress={() => navigation.navigate('SelecionarPagamento')}
                 >
                     <Text style ={style.btnPagar}>PAGAR</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
             </View> 
         </View>
     </View>
