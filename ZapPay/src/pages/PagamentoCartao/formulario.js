@@ -2,9 +2,11 @@ import React from "react";
 import { Text, View, TextInput, TouchableOpacity, StyleSheet } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 
+
 export default function Formulario() {
 const { control, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
+        nameCard:'',
         cardNumber: '',
         validade: '',
         CV:''
@@ -13,12 +15,30 @@ const { control, handleSubmit, formState: { errors } } = useForm({
 const onSubmit = data => console.log(data);
 
 return (
-<View style ={{ flexDirection: 'column', alignItems: "center"}}>
+
+    <View style ={{ flexDirection: 'column', alignItems: "center"}}>
+                    {/* CONTROLADOR INPUT NOME DO TITULAR */}
+    <Controller
+    control={control}
+    rules={{
+        required: true,                                                                                                            
+    }}
+    render={({ field: { onChange, onBlur, value } }) => (
+        <TextInput
+        style={style.input}
+        onBlur={onBlur}
+        onChangeText={onChange}
+        value={value}
+        placeholder='INSIRA O NOME COMO NO CARTÃO'
+        />
+    )}
+    name="nameCard"
+    />
                     {/* CONTROLADOR INPUT N° CARTAO */}
     <Controller
     control={control}
     rules={{
-        required: true,
+        required: true,                                                                                                            
     }}
     render={({ field: { onChange, onBlur, value } }) => (
         <TextInput
@@ -84,18 +104,19 @@ return (
 const style = StyleSheet.create({
     input:{
         backgroundColor: '#fff',
-        width: 450,
+        width: 750,
         height:60,
         marginBottom: 25,
         color: '#222',
         fontSize: 24,
         borderRadius: 50,
+        marginVertical: 30,
         padding: 10,
         textAlign: 'center',
     },
     inputRow:{
         backgroundColor: '#fff',
-        width: 200,
+        width: 340,
         height:60,
         marginBottom: 25,
         marginLeft:30,
@@ -112,7 +133,7 @@ const style = StyleSheet.create({
         padding:15,
         fontSize: 20,
         borderRadius: 50,
-        width: 450,
+        width: 750,
         textAlign: "center"
     },
 })

@@ -39,7 +39,7 @@ return (
                     height: 64,
                     }}>
                     </Image>
-                    <Text style={style.user}>SELECIONAR CARTÃO</Text>
+                    <Text style={style.user}>CARTÕES</Text>
                     <TouchableOpacity onPress={()=>navigation.navigate('Welcome')}>
                         <Image source={require("../../assets/exit.png")} 
                         onPress={()=>navigation.navigate('Welcome')}
@@ -54,8 +54,8 @@ return (
                         {/* INICIO PARTE CENTRAL DA TELA */}
             <View style={style.central}>
                 <tab.Navigator>
-                    <tab.Screen name = "CARTÕES" component={HomeScreen}/>
-                    <tab.Screen name = "CADASTRO CARTÃO" component={CadastroScreen}/>
+                    <tab.Screen name = "MEUS CARTÕES" component={HomeScreen}/>
+                    <tab.Screen name = "CADASTRAR NOVO CARTÃO" component={CadastroScreen}/>
                 </tab.Navigator>
             </View>
                                             {/* BOTOES AVANCAR E VOLTAR */}
