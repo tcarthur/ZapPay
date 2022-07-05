@@ -38,6 +38,8 @@ return (
     <Controller
     control={control}
     rules={{
+        maxLength: 16,
+        minLength: 16,
         required: true,                                                                                                            
     }}
     render={({ field: { onChange, onBlur, value } }) => (
@@ -94,7 +96,7 @@ return (
         name="CV"
         />
     </View>
-    <TouchableOpacity  onPress={handleSubmit(onSubmit)} >
+    <TouchableOpacity onPress={handleSubmit(onSubmit)} >
         <Text style={style.salvarBtn}> SALVAR </Text>
     </TouchableOpacity>
 </View>

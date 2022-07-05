@@ -6,6 +6,7 @@ import Consulta from '../pages/Consulta';
 import SelecionarPagamento from '../pages/SelecionarPagamento';
 import PagamentoPix from '../pages/PagamentoPix';
 import PagamentoCartao from '../pages/PagamentoCartao'
+import pagamentoConcluido from "../pages/PagamentoConcluido/pagamentoConcluido";
 
 const Stack = createNativeStackNavigator();
 
@@ -42,6 +43,11 @@ export default function Routes(){
             <Stack.Screen
             name = "PagamentoCartao"
             component={PagamentoCartao}
+            options={{ headerShown: false}}
+            />
+            <Stack.Screen
+            name = "pagamentoConcluido"
+            component={pagamentoConcluido}
             options={{ headerShown: false}}
             />
         </Stack.Navigator>

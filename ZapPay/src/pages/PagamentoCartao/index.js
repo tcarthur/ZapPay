@@ -3,11 +3,14 @@ import React, { useState } from 'react'
 import { useNavigation, } from '@react-navigation/native'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Formulario from './formulario';
+import MeusCartoes from './meusCartoes';
+
 
 function HomeScreen() {
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             {/* FORMULARIO COM CARTÕES CADASTRADOS */}
+
         </View>
     );
 }
@@ -64,12 +67,8 @@ return (
                 onPress={() => navigation.navigate('SelecionarPagamento')}
                 >
                     <Text style ={style.btnVoltar}>VOLTAR</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                onPress={() => navigation.navigate('SelecionarPagamento')}
-                >
-                    <Text style ={style.btnPagar}>PAGAR</Text>
                 </TouchableOpacity> */}
+
             </View> 
         </View>
     </View>

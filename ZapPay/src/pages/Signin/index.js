@@ -63,7 +63,7 @@ const navigation = useNavigation();
                   </DataTable.Cell>
                   <DataTable.Cell style={{paddingLeft:45}}>
                     <Text style={{fontSize:30,fontWeight:'bold',}}>
-                      R$900,00
+                      R$300,00
                     </Text>
                   </DataTable.Cell>
                   <DataTable.Cell>

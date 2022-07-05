@@ -1,10 +1,13 @@
-import { View, Text,StyleSheet,Image,TouchableOpacity, ScrollView } from 'react-native'
-import React from 'react'
+import { View, Text,StyleSheet,TouchableOpacity,Image, Animated } from 'react-native'
+import React, {useState}  from 'react';
 import { useNavigation } from '@react-navigation/native'
-import { Divider } from 'react-native-paper';
+import * as Animatable from 'react-native-animatable';
 
 
 export default function Consulta() {
+
+
+const [concluido] = useState(new Animated.ValueXY({x:300,y: 300}));
 
 const navigation = useNavigation();
 
@@ -17,7 +20,7 @@ return (
                 height: 64,
                 }}>
                 </Image>
-                <Text style={style.user}>RESUMO DO PEDIDO</Text>
+                <Text style={style.user}>PAGAMENTO CONCLUÍDO</Text>
                 <TouchableOpacity onPress={()=>navigation.navigate('Welcome')}>
                     <Image source={require("../../assets/exit.png")} 
                     onPress={()=>navigation.navigate('Welcome')}
@@ -29,36 +32,32 @@ return (
                 </TouchableOpacity>
             </View> 
             
-        <View style={style.tabelaProdutos}>
-            <ScrollView>
-            {/* PRODUTO 1 */}
-                <View>
-                    <View style ={{flexDirection:'row',flexWrap:'nowrap', justifyContent:'center',alignItems:'center',}}>
-                        <View>
-                            <Image style={{maxWidth:300, maxHeight:200}} source={require('../../image/card-back.png')}/>
-                        </View>
-                        <View style={{flexDirection: 'column',height:250,marginLeft:25,}}>
-                            <Text style= {{fontSize: 40, fontWeight:'bold',marginBottom:20}}> PEDIDO: 766969</Text>
-                            <Text style= {{fontSize: 30, fontWeight:'bold',marginBottom:20}}> 27001515 - Cartão Loja Cliente 1</Text>
-                            <Text style= {{fontSize: 30, fontWeight:'bold',marginBottom:20}}> 1 unid.</Text>
-                            <Text style= {{fontSize: 30, fontWeight:'bold',marginBottom:20}}> R$300,00</Text>
-                        </View>
-                    </View>
-                </View>
-            </ScrollView>
+        <View style={style.centroDaTela}>
+            <Animatable.View
+            animation="pulse"
+            easing="ease-out"
+            iterationCount="infinite"
+            >
+                <Text  style={style.concluidoText}> COMPRA CONCLUIDA COM SUCESSO </Text>
+            </Animatable.View>
+            <Animatable.Image
+            animation="pulse"
+            easing="ease-out"
+            iterationCount="infinite"
+            style={{
+                width: concluido.x,
+                height: concluido.y,
+            }}
+                source={require('../../image/finalCompra.png')}
+            />
 
         </View>
 
         <View style={style.containerBtn}>
             <TouchableOpacity
-            onPress={() => navigation.navigate('SingIn')}
-            >
-                <Text style ={style.btnVoltar}>VOLTAR</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
             onPress={() => navigation.navigate('SelecionarPagamento')}
             >
-                <Text style ={style.btnPagar}>AVANÇAR</Text>
+                <Text style ={style.btnPagar}>INÍCIO</Text>
             </TouchableOpacity>
         </View> 
     </View>
@@ -81,15 +80,21 @@ const style = StyleSheet.create({
         fontWeight: 'bold',
         color: '#fff',
         },
-    tabelaProdutos:{
-        alignSelf:'center',
-        alignContent:'space-between',
-        width:'95%',
-        height: '85%',
-        paddingTop:40
-    },
+        centroDaTela:{
+            justifyContent:'center',
+            alignItems:'center',
+            width:'100%',
+            height: '85%',
+            paddingTop:40
+        },
+        concluidoText:{
+            marginVertical:60,
+            fontSize: 32,
+            fontWeight: 'bold',
+            color: '#000',
+            },
     containerBtn:{
-        flexDirection: 'row',
+        flexDirection: 'row-reverse',
         justifyContent:'space-between',
         paddingLeft: 30,
         paddingRight: 30

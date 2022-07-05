@@ -1,37 +1,23 @@
-import React, {useState, useEffect}  from 'react';
-import{ View, KeyboardAvoidingView, Image, TextInput, TouchableOpacity, Text, StyleSheet, Animated, Keyboard } from 'react-native';
+import React, {useState}  from 'react';
+import{ View, KeyboardAvoidingView,TextInput, TouchableOpacity, Text, StyleSheet, Animated, Keyboard } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { useNavigation } from '@react-navigation/native';
 
 export default function SignIn() {
 
-const [offset] = useState(new Animated.ValueXY({x: 0, y: 80}));
-const [opacity] = useState(new Animated.Value(0));
+
 const [logo] = useState(new Animated.ValueXY({x:277,y: 277}));
 
 
 const navigation = useNavigation();
-useEffect(()=>{
-Animated.parallel([
-    Animated.spring(offset.y, {
-    toValue:0,
-    speed: 4,
-    bounciness:12,
-    useNativeDriver: false
-    }),    
-Animated.timing(opacity,{
-    toValue: 1,
-    duration: 200,
-    useNativeDriver: false
-})
-]).start();
-}, []);
+
 
 return (
 <KeyboardAvoidingView style= {style.background}>
     <View style={style.containerLogo}>
     <Animatable.Image
     animation="flipInY"
+    delay={400}
     style={{
         width: logo.x,
         height: logo.y,
@@ -41,7 +27,7 @@ return (
     </View>
 
     <Animatable.View 
-    delay={400}
+    delay={1000}
     animation="fadeInUp"
 
     style={[
