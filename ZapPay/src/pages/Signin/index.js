@@ -49,7 +49,7 @@ const navigation = useNavigation();
             
             <TouchableOpacity 
             style={{marginVertical:20}}
-            onPress={()=>navigation.navigate('Consulta')}>
+            onPress={()=>navigation.navigate('PagamentoCartao')}>
               <DataTable.Row >
                   <DataTable.Cell>
                     <Text style={{fontSize:30,fontWeight:'bold',}}>
@@ -76,7 +76,7 @@ const navigation = useNavigation();
 
             <TouchableOpacity 
             style={{marginVertical:20}}
-            onPress={()=>navigation.navigate('Consulta')}>
+            onPress={()=>navigation.navigate('PagamentoCartao')}>
               <DataTable.Row >
                   <DataTable.Cell>
                     <Text style={{fontSize:30,fontWeight:'bold',}}>
@@ -103,7 +103,7 @@ const navigation = useNavigation();
 
             <TouchableOpacity 
             style={{marginVertical:20}}
-            onPress={()=>navigation.navigate('Consulta')}>
+            onPress={()=>navigation.navigate('PagamentoCartao')}>
               <DataTable.Row >
                   <DataTable.Cell>
                     <Text style={{fontSize:30,fontWeight:'bold',}}>

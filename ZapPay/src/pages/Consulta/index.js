@@ -68,6 +68,8 @@ return (
 const style = StyleSheet.create({
     container:{
         flex:1,
+        justifyContent: 'center',
+        alignContent: 'center',
     },
     topBar:{
         backgroundColor: '#069D07',
