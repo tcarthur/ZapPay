@@ -85,6 +85,7 @@ return (
         }}
         render={({ field: { onChange, onBlur, value } }) => (
             <TextInput
+            autoCorrect={false}
             style={style.inputRow}
             onBlur={onBlur}
             onChangeText={onChange}

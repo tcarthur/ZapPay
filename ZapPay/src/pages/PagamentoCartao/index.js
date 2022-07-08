@@ -92,8 +92,7 @@ const style = StyleSheet.create({
     central:{
         felx:1,
         justifyContent:'center',
-        height:'85%',
-        backgroundColor:'#fff',
+        height:'100%',
 
     },
     novoCartao:{

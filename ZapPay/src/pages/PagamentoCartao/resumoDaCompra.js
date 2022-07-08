@@ -1,61 +1,86 @@
 import { useState } from 'react';
-import { View,StyleSheet,Image,Text,TouchableOpacity,SafeAreaView, ScrollView,StatusBar,Modal,Alert} from 'react-native'
+import { View,StyleSheet,Text,TouchableOpacity,SafeAreaView, ScrollView,Modal,Alert,} from 'react-native'
+import ImageProduto from './imageProduto';
+import { useNavigation } from '@react-navigation/native';
 
 
 
 export default function ResumoDaCompra() {
 
     const [modalVisible,setModalVisible] = useState(false)
+    const navigation = useNavigation(); 
 
 return (
-    <SafeAreaView style ={ style.screen}>
-        <ScrollView>     
-            
-
-
-            <View style={style.containerResumo}>
-                <View style={style.Produto}>
-                    <Image style={style.imageProduct} source={require('../../image/card-back.png')}/>
-
-                    <View style={style.resumoPedido}>
-                        <Text style= {{fontSize: 40, fontWeight:'bold',marginBottom:20}}> PEDIDO: 766969</Text>
-                        <Text style= {{fontSize: 30, fontWeight:'bold',marginBottom:20}}> 27001515 - Cartão Loja Cliente 1</Text>
-                        <Text style= {{fontSize: 30, fontWeight:'bold',marginBottom:20}}> 1 unid.</Text>
-                        <Text style= {{fontSize: 30, fontWeight:'bold',marginBottom:20}}> R$300,00</Text>
+    <View style ={ style.screen}>
+            <SafeAreaView style={style.containerResumo}>
+                <ScrollView>
+                        <View>
+                            <ImageProduto/>
+                        </View>
+                    <View>
+                        <View style={style.resumoPedido}>
+                            <Text style= {{fontSize: 40, fontWeight:'bold',marginBottom:20, color:'white'}}> PEDIDO: 766969</Text>
+                            <Text style= {{fontSize: 30, fontWeight:'bold',marginBottom:20, color:'white'}}> 27001515 - Cartão Loja Cliente 1</Text>
+                            <Text style= {{fontSize: 30, fontWeight:'bold',marginBottom:20, color:'white'}}> 1 unid.</Text>
+                            <Text style= {{fontSize: 30, fontWeight:'bold',marginBottom:20, color:'white'}}> R$300,00</Text>
+                        </View>
                     </View>
                     
-                </View>
+                </ScrollView>
                 <View>
                     <Modal     
-                        animationType="slide"
-                        transparent={true}
+                        animationType="fade"
                         visible={modalVisible}
+                        transparent={true}
                         onRequestClose={() => {
                         Alert.alert("Modal has been closed.");
                         setModalVisible(!modalVisible);
                         }}
                         >
-                        <Text> CARTÃO 1</Text>
-                        <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}> 
-                            <Text>Sair</Text>
-                        </TouchableOpacity>
+                        <View style={style.modalPagamento}>
+                            <View style={{height:'86%',width:'90%',margin:22,alignItems:'center',marginHorizontal:10}}>
+                                <Text style={{fontSize: 40, fontWeight:'bold',marginBottom:20, color:'black'}}> CARTÃO 1</Text>
+                            </View>
+                            <View style={style.containerBtn}>
+
+                                <TouchableOpacity  onPress={()=>navigation.navigate('pagamentoConcluido')}> 
+                                    <Text  style = { style.btnPagamentos}>PAGAR</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}> 
+                                    <Text  style = { style.btnCancelar}>SAIR</Text>
+                                </TouchableOpacity>
+
+                            </View>
+                        </View>
                     </Modal>
                 </View>
-                <TouchableOpacity onPress={() => setModalVisible(true)}> 
-                    <Text>MOSTRAR</Text>
-                </TouchableOpacity>
-            </View>
-        </ScrollView>
-    </SafeAreaView>
+            </SafeAreaView>
+            <View style={style.containerBtn}>
+                <View>
+                    <TouchableOpacity onPress={() => setModalVisible(true)}> 
+                        <Text  style = { style.btnPagamentos}>PAGAMENTOS</Text>
+                    </TouchableOpacity>
+                </View>
 
+                <View>
+                    <TouchableOpacity  onPress={()=>navigation.navigate('SingIn')}> 
+                        <Text  style = { style.btnVoltar}>VOLTAR</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+    </View>
     );
 }
 
 const style = StyleSheet.create({
-    screen:{flex: 1,paddingTop: StatusBar.currentHeight,backgroundColor:'#fff'},
-    containerResumo:{justifyContent:'center', alignItems:'center'},
-    Produto:{justifyContent:'center', alignItems:'center'},
-    imageProduct:{maxWidth:300, maxHeight:200,marginVertical: 55},
-    resumoPedido:{flexDirection: 'column',height:250,marginLeft:25,},
-
+    screen:{flex:1,alignItems:'center',backgroundColor:'white'},
+    containerBtn:{flexDirection:'row-reverse', justifyContent:'space-around',width:'100%'},
+    containerResumo:{alignItems:'center',marginVertical:50,height:'75%',width:'100%'},
+    resumoPedido:{alignItems:'center',backgroundColor:'#069D07',borderRadius:15,marginVertical:15,paddingVertical:25},
+    btnPagamentos:{backgroundColor:'#069D07', color:'white', padding:25,fontSize:25,borderRadius:35,width:300,fontWeight:'bold',textAlign:'center'},
+    btnVoltar:{backgroundColor:'red', color:'white', padding:25,fontSize:25,borderRadius:35,width:300,fontWeight:'bold',textAlign:'center'},
+    modalPagamento:{alignItems:'center' ,bottom:0 ,position: 'absolute',height:'88%',backgroundColor: '#f0f0f0',opacity:30 ,width: '100%',borderTopLeftRadius: 45,borderTopRightRadius: 45,paddingLeft: 25,paddingRight: 25,},
+    btnCancelar:{backgroundColor:'red', color:'white', padding:25,fontSize:25,borderRadius:35,width:300,fontWeight:'bold',textAlign:'center'}
+    
 })
