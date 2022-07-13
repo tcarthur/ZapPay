@@ -3,8 +3,6 @@ import { View,StyleSheet,Text,TouchableOpacity,SafeAreaView, ScrollView,Modal,Al
 import ImageProduto from './imageProduto';
 import { useNavigation } from '@react-navigation/native';
 
-
-
 export default function ResumoDaCompra() {
 
     const [modalVisible,setModalVisible] = useState(false)
@@ -12,11 +10,24 @@ export default function ResumoDaCompra() {
 
 return (
     <View style ={ style.screen}>
+        <View style={style.container}>
             <SafeAreaView style={style.containerResumo}>
                 <ScrollView>
-                        <View>
-                            <ImageProduto/>
+                    <View>
+                        <ImageProduto/>
+                    </View>
+                    <View>
+                        <View style={style.resumoPedido}>
+                            <Text style= {{fontSize: 40, fontWeight:'bold',marginBottom:20, color:'white'}}> PEDIDO: 766969</Text>
+                            <Text style= {{fontSize: 30, fontWeight:'bold',marginBottom:20, color:'white'}}> 27001515 - Cartão Loja Cliente 1</Text>
+                            <Text style= {{fontSize: 30, fontWeight:'bold',marginBottom:20, color:'white'}}> 1 unid.</Text>
+                            <Text style= {{fontSize: 30, fontWeight:'bold',marginBottom:20, color:'white'}}> R$300,00</Text>
                         </View>
+                    </View>
+
+                    <View>
+                        <ImageProduto/>
+                    </View>
                     <View>
                         <View style={style.resumoPedido}>
                             <Text style= {{fontSize: 40, fontWeight:'bold',marginBottom:20, color:'white'}}> PEDIDO: 766969</Text>
@@ -56,30 +67,32 @@ return (
                     </Modal>
                 </View>
             </SafeAreaView>
-            <View style={style.containerBtn}>
-                <View>
-                    <TouchableOpacity onPress={() => setModalVisible(true)}> 
-                        <Text  style = { style.btnPagamentos}>PAGAMENTOS</Text>
-                    </TouchableOpacity>
-                </View>
-
-                <View>
-                    <TouchableOpacity  onPress={()=>navigation.navigate('SingIn')}> 
-                        <Text  style = { style.btnVoltar}>VOLTAR</Text>
-                    </TouchableOpacity>
-                </View>
+        </View>
+        <View style={style.containerBtn}>
+            <View>
+                <TouchableOpacity onPress={() => setModalVisible(true)}> 
+                    <Text  style = { style.btnPagamentos}>PAGAMENTOS</Text>
+                </TouchableOpacity>
             </View>
+
+            <View>
+                <TouchableOpacity  onPress={()=>navigation.navigate('SingIn')}> 
+                    <Text  style = { style.btnVoltar}>VOLTAR</Text>
+                </TouchableOpacity>
+            </View>
+        </View>
     </View>
-    );
+);
 }
 
 const style = StyleSheet.create({
     screen:{flex:1,alignItems:'center',backgroundColor:'white'},
+    container:{backgroundColor:'#f0f0f0',elevation:2,alignContent:'center',alignItems: 'center',width:'95%',height:'80%',marginBottom:16,marginTop:20,borderRadius:28},
     containerBtn:{flexDirection:'row-reverse', justifyContent:'space-around',width:'100%'},
-    containerResumo:{alignItems:'center',marginVertical:50,height:'75%',width:'100%'},
+    containerResumo:{alignItems:'center',marginVertical:50,height:'85%',width:'95%', },
     resumoPedido:{alignItems:'center',backgroundColor:'#069D07',borderRadius:15,marginVertical:15,paddingVertical:25},
-    btnPagamentos:{backgroundColor:'#069D07', color:'white', padding:25,fontSize:25,borderRadius:35,width:300,fontWeight:'bold',textAlign:'center'},
-    btnVoltar:{backgroundColor:'red', color:'white', padding:25,fontSize:25,borderRadius:35,width:300,fontWeight:'bold',textAlign:'center'},
+    btnPagamentos:{backgroundColor:'#069D07', color:'white',elevation:3.5 ,padding:25,fontSize:25,borderRadius:35,width:300,fontWeight:'bold',textAlign:'center'},
+    btnVoltar:{backgroundColor:'red', color:'white',elevation:3.5 ,padding:25,fontSize:25,borderRadius:35,width:300,fontWeight:'bold',textAlign:'center'},
     modalPagamento:{alignItems:'center' ,bottom:0 ,position: 'absolute',height:'88%',backgroundColor: '#f0f0f0',opacity:30 ,width: '100%',borderTopLeftRadius: 45,borderTopRightRadius: 45,paddingLeft: 25,paddingRight: 25,},
     btnCancelar:{backgroundColor:'red', color:'white', padding:25,fontSize:25,borderRadius:35,width:300,fontWeight:'bold',textAlign:'center'}
     

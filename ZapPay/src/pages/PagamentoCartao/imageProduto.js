@@ -12,6 +12,6 @@ render() {
 }
 }
 const style = StyleSheet.create({
-    containerImage:{justifyContent:'center',alignItems:'center' ,width: 800, height: 400, backgroundColor: '#f0f0f0',borderRadius:15,},
+    containerImage:{justifyContent:'center',alignItems:'center' ,width: 800, height: 400, backgroundColor: '#fff',borderRadius:15,elevation:8},
     imageProduct:{marginVertical:25,resizeMode:'center',width:800,height:500,},
 })
