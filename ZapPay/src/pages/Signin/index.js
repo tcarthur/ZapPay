@@ -1,8 +1,9 @@
 
 import { View, Text, Image,StyleSheet, Akert, TouchableOpacity} from 'react-native'
-import React,{ Component} from 'react'
+import React from 'react'
 import { DataTable } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native';
+import { NomeUser } from '../PagamentoCartao/listaItens';
 
 
 export default function SignIn() {
@@ -19,7 +20,9 @@ const navigation = useNavigation();
           height: 64,
         }}>
         </Image>
-          <Text style={style.user}> SEJA BEM VINDO</Text>
+        <View>
+          <NomeUser/>
+        </View>
         <TouchableOpacity onPress={()=>navigation.navigate('Welcome')}>
           <Image source={require("../../assets/exit.png")} style={{
             width: 40,
@@ -74,60 +77,6 @@ const navigation = useNavigation();
               </DataTable.Row>
             </TouchableOpacity>
 
-            <TouchableOpacity 
-            style={{marginVertical:20}}
-            onPress={()=>navigation.navigate('PagamentoCartao')}>
-              <DataTable.Row >
-                  <DataTable.Cell>
-                    <Text style={{fontSize:30,fontWeight:'bold',}}>
-                      788792
-                    </Text>
-                  </DataTable.Cell>
-                  <DataTable.Cell>
-                    <Text style={{fontSize:30,fontWeight:'bold',}}>
-                      06/06/2022
-                    </Text>
-                  </DataTable.Cell>
-                  <DataTable.Cell style={{paddingLeft:45}}>
-                    <Text style={{fontSize:30,fontWeight:'bold',}}>
-                      R$560,00
-                    </Text>
-                  </DataTable.Cell>
-                  <DataTable.Cell>
-                    <Text style={{fontSize:30,fontWeight:'bold',}}>
-                      CONCLUIDO
-                    </Text>
-                  </DataTable.Cell>
-              </DataTable.Row>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-            style={{marginVertical:20}}
-            onPress={()=>navigation.navigate('PagamentoCartao')}>
-              <DataTable.Row >
-                  <DataTable.Cell>
-                    <Text style={{fontSize:30,fontWeight:'bold',}}>
-                      754483
-                    </Text>
-                  </DataTable.Cell>
-                  <DataTable.Cell>
-                    <Text style={{fontSize:30,fontWeight:'bold',}}>
-                      30/06/2022
-                    </Text>
-                  </DataTable.Cell>
-                  <DataTable.Cell style={{paddingLeft:45}}>
-                    <Text style={{fontSize:30,fontWeight:'bold',}}>
-                      R$305,00
-                    </Text>
-                  </DataTable.Cell>
-                  <DataTable.Cell>
-                    <Text style={{fontSize:30,fontWeight:'bold',}}>
-                      IMPRESSÃO
-                    </Text>
-                  </DataTable.Cell>
-              </DataTable.Row>
-            </TouchableOpacity>
-
           </DataTable>
 
 
@@ -156,11 +105,7 @@ const style = StyleSheet.create({
     justifyContent: "space-between",
     padding: 10,
     },
-    user:{
-      fontSize: 32,
-      fontWeight: 'bold',
-      color: '#fff',
-    },
+
     alert:{
       flexDirection:'row',
       paddingTop: 0,

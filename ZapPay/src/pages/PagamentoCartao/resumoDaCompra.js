@@ -1,7 +1,7 @@
 import { useState} from 'react';
 import { View,StyleSheet,Text,TouchableOpacity,SafeAreaView, ScrollView,Modal,Alert, ViewPagerAndroidBase,} from 'react-native'
 import { useNavigation } from '@react-navigation/native';
-import ListaItens from './listaItens';
+import {ListaItens} from './listaItens'; 
 
 export default function ResumoDaCompra() {
 

@@ -1,8 +1,9 @@
 import React,{Component} from "react";
-import {View,Text,StyleSheet} from 'react-native'
+import {View,Text,StyleSheet,TouchableOpacity} from 'react-native'
+import { DataTable } from 'react-native-paper'
 import ImageProduto from "../pages/PagamentoCartao/imageProduto";
 
-export default class Item extends Component {
+export  class Item extends Component {
     render(){
         return(
             <View>
@@ -19,6 +20,17 @@ export default class Item extends Component {
         )
     }
 }
+
+export class Usuario extends Component {
+    render(){
+        return(
+            <Text style= {{fontSize: 30, fontWeight:'bold',marginBottom:20, color:'white'}}>BEM VINDO {this.props.data.User}</Text>
+        )
+    }
+}
+
+
 const style = StyleSheet.create({
 resumoPedido:{alignItems:'center',backgroundColor:'#069D07',borderRadius:15,marginVertical:15,paddingVertical:25},
 })
+

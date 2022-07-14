@@ -1,6 +1,5 @@
 import { Text, View, Image,StyleSheet } from 'react-native'
 import React, { Component } from 'react'
-import { ScreenContainer } from 'react-native-screens'
 
 export default class ImageProduto extends Component {
 render() {
