@@ -1,6 +1,6 @@
 
 import { View, Text, Image,StyleSheet, Akert, TouchableOpacity} from 'react-native'
-import React from 'react'
+import React,{ Component} from 'react'
 import { DataTable } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native';
 
@@ -19,7 +19,7 @@ const navigation = useNavigation();
           height: 64,
         }}>
         </Image>
-          <Text style={style.user}> SEJA BEM VINDO USUÁRIO</Text>
+          <Text style={style.user}> SEJA BEM VINDO</Text>
         <TouchableOpacity onPress={()=>navigation.navigate('Welcome')}>
           <Image source={require("../../assets/exit.png")} style={{
             width: 40,
