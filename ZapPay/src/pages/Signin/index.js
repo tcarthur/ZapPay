@@ -3,8 +3,7 @@ import { View, Text, Image,StyleSheet, Akert, TouchableOpacity} from 'react-nati
 import React from 'react'
 import { DataTable } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native';
-import { NomeUser } from '../PagamentoCartao/listaItens';
-
+import { NomeUser,Descricao} from '../PagamentoCartao/listaItens';
 
 export default function SignIn() {
 
@@ -48,33 +47,10 @@ const navigation = useNavigation();
                   <Text style = {{ fontSize: 25, fontWeight:'bold'}}>STATUS</Text>
                 </DataTable.Title>
             </DataTable.Header>
-
-            
             <TouchableOpacity 
             style={{marginVertical:20}}
             onPress={()=>navigation.navigate('PagamentoCartao')}>
-              <DataTable.Row >
-                  <DataTable.Cell>
-                    <Text style={{fontSize:30,fontWeight:'bold',}}>
-                      766969
-                    </Text>
-                  </DataTable.Cell>
-                  <DataTable.Cell>
-                    <Text style={{fontSize:30,fontWeight:'bold',}}>
-                      25/06/2022
-                    </Text>
-                  </DataTable.Cell>
-                  <DataTable.Cell style={{paddingLeft:45}}>
-                    <Text style={{fontSize:30,fontWeight:'bold',}}>
-                      R$300,00
-                    </Text>
-                  </DataTable.Cell>
-                  <DataTable.Cell>
-                    <Text style={{fontSize:30,fontWeight:'bold',}}>
-                      PENDENTE
-                    </Text>
-                  </DataTable.Cell>
-              </DataTable.Row>
+              <Descricao/>
             </TouchableOpacity>
 
           </DataTable>

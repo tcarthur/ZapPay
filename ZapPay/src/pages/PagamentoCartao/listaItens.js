@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View,FlatList } from "react-native";
 import api from "../../service/Api";
-import {Item,Usuario,Descricacao} from "../../components";
+import {Item,Usuario,DescricaoProduto} from "../../components";
 
 export  class ListaItens extends Component{
 
@@ -60,19 +60,19 @@ export class NomeUser extends Component{
     }
 }
 
-export class DescricaoProduto extends Component{
+export class Descricao extends Component{
 
   constructor(props){
     super(props);
     this.state = {
-      descricacao: []
+      descricao: []
     }
   }
 
     async componentDidMount(){
       const response = await api.get('apiCliente/v1/infoPedido')
       this.setState({
-        descricacao: response.data
+        descricao: response.data
       });
     }
 
@@ -80,9 +80,9 @@ export class DescricaoProduto extends Component{
       return(
         <View>
           <FlatList
-          data={this.state.user}
+          data={this.state.descricao}
           keyExtractor={item => item.id}
-          renderItem={({item}) => <Descricao data={item} />}
+          renderItem={({item}) => <DescricaoProduto data={item} />}
           />
         </View>
       )

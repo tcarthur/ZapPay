@@ -2,6 +2,7 @@ import { useState} from 'react';
 import { View,StyleSheet,Text,TouchableOpacity,SafeAreaView, ScrollView,Modal,Alert, ViewPagerAndroidBase,} from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import {ListaItens} from './listaItens'; 
+import PagamentoPix from '../PagamentoPix';
 
 export default function ResumoDaCompra() {
 
@@ -25,13 +26,13 @@ return (
                         visible={modalVisible}
                         transparent={true}
                         onRequestClose={() => {
-                        Alert.alert("Modal has been closed.");
                         setModalVisible(!modalVisible);
                         }}
                         >
                         <View style={style.modalPagamento}>
                             <View style={{height:'86%',width:'90%',margin:22,alignItems:'center',marginHorizontal:10}}>
                                 <Text style={{fontSize: 40, fontWeight:'bold',marginBottom:20, color:'black'}}> CARTÃO 1</Text>
+                                <PagamentoPix/>
                             </View>
                             <View style={style.containerBtn}>
 

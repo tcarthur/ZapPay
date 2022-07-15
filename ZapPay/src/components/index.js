@@ -3,6 +3,7 @@ import {View,Text,StyleSheet,TouchableOpacity} from 'react-native'
 import { DataTable } from 'react-native-paper'
 import ImageProduto from "../pages/PagamentoCartao/imageProduto";
 
+
 export  class Item extends Component {
     render(){
         return(
@@ -26,6 +27,37 @@ export class Usuario extends Component {
         return(
             <Text style= {{fontSize: 30, fontWeight:'bold',marginBottom:20, color:'white'}}>BEM VINDO {this.props.data.User}</Text>
         )
+    }
+}
+
+export class DescricaoProduto extends Component {
+    
+    render(){
+        return(
+
+            <DataTable.Row >
+                <DataTable.Cell>
+                <Text style={{fontSize:30,fontWeight:'bold',}}>
+                    {this.props.data.codigoPedido}
+                </Text>
+                </DataTable.Cell>
+                <DataTable.Cell>
+                <Text style={{fontSize:30,fontWeight:'bold',}}>
+                    {this.props.data.dataPedido}
+                </Text>
+                </DataTable.Cell>
+                <DataTable.Cell style={{paddingLeft:45}}>
+                <Text style={{fontSize:30,fontWeight:'bold',}}>
+                    R${this.props.data.valor}
+                </Text>
+                </DataTable.Cell>
+                <DataTable.Cell>
+                <Text style={{fontSize:30,fontWeight:'bold',}}>
+                    {this.props.data.status}
+                </Text>
+                </DataTable.Cell>
+            </DataTable.Row>
+    )
     }
 }
 
