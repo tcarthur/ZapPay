@@ -1,7 +1,7 @@
 import React,{Component} from "react";
-import {View,Text,StyleSheet,TouchableOpacity} from 'react-native'
+import {View,Text,StyleSheet} from 'react-native'
 import { DataTable } from 'react-native-paper'
-import ImageProduto from "../pages/PagamentoCartao/imageProduto";
+import ImagemProduto from '../pages/DetalhesPagamento/imageProduto'
 
 
 export  class Item extends Component {
@@ -9,7 +9,7 @@ export  class Item extends Component {
         return(
             <View>
                 <View>
-                    <ImageProduto/>
+                    <ImagemProduto/>
                 </View>
                 <View style={style.resumoPedido}>
                     <Text  style= {{fontSize: 30, fontWeight:'bold',marginBottom:20, color:'white'}}>ITEM:{this.props.data.codigoItem}</Text>

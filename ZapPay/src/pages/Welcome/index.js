@@ -1,5 +1,5 @@
 import React, {useState}  from 'react';
-import{ View, KeyboardAvoidingView,TextInput, TouchableOpacity, Text, StyleSheet, Animated, Keyboard } from 'react-native';
+import{ View, KeyboardAvoidingView,TextInput, TouchableOpacity, Text, StyleSheet, Animated,  } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { useNavigation } from '@react-navigation/native';
 
@@ -42,6 +42,7 @@ return (
     />
     <TextInput style={style.input}TextInput
     placeholder="SENHA"
+    secureTextEntry={true}
     autoCorrect={false}
     onChangeText={()=>{}}
     />
