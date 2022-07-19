@@ -1,9 +1,9 @@
 
-import { View, Text, Image, StyleSheet, Akert, TouchableOpacity } from 'react-native'
+import { View, Text, Image, StyleSheet,TouchableOpacity } from 'react-native'
 import React from 'react'
 import { DataTable } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native';
-import { NomeUser, Descricao } from '../PagamentoCartao/listaItens';
+import { NomeUser, Descricao } from '../../components/itensAPI';
 
 export default function DetalhesPedidos() {
 
@@ -20,7 +20,7 @@ export default function DetalhesPedidos() {
           }}>
         </Image>
         <View>
-          <NomeUser />
+          <NomeUser/>
         </View>
         <TouchableOpacity onPress={() => navigation.navigate('Welcome')}>
           <Image source={require("../../assets/exit.png")} style={{
@@ -49,8 +49,8 @@ export default function DetalhesPedidos() {
           </DataTable.Header>
           <TouchableOpacity
             style={{ marginVertical: 20 }}
-            onPress={() => navigation.navigate('PagamentoCartao')}>
-            <Descricao />
+            onPress={() => navigation.navigate('')}>
+              <Descricao/>
           </TouchableOpacity>
 
         </DataTable>

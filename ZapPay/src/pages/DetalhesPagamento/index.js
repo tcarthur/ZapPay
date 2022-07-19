@@ -1,8 +1,8 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity,} from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 import { useNavigation, } from '@react-navigation/native'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import ResumoDaCompra from './resumoDaCompra';
+import ResumoDaCompra from '../../components/resumoDaCompra'
 
 
 
