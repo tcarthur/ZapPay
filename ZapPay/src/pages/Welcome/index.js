@@ -47,9 +47,9 @@ return (
     onChangeText={()=>{}}
     />
     <TouchableOpacity style={style.btnAcessar}
-    onPress={() => navigation.navigate('SingIn')}
+    onPress={() => navigation.navigate('DetalhesPedidos')}
     >
-        <Text style={style.submitText}>Acessar</Text>
+        <Text style={style.submitText}>ENTRAR</Text>
     </TouchableOpacity>
 
     </Animatable.View>

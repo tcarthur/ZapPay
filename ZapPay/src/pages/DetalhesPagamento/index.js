@@ -1,25 +1,22 @@
-import { View, Text,StyleSheet,Image,TouchableOpacity,Modal, Alert} from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity,} from 'react-native'
 import React, { useState } from 'react'
 import { useNavigation, } from '@react-navigation/native'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import Formulario from './formulario';
 import ResumoDaCompra from './resumoDaCompra';
 
 
 
 function HomeScreen() {
     return (
-        <View style={{ flex: 1 ,}}>
-            {/* FORMULARIO COM CARTÕES CADASTRADOS */}
-                <ResumoDaCompra/>
+        <View style={{ flex: 1, }}>
+            <ResumoDaCompra />
         </View>
     );
 }
 
-function CadastroScreen() {
+function AreaDePagamento() {
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Formulario/>
         </View>
     )
 }
@@ -28,82 +25,82 @@ function CadastroScreen() {
 
 export default function Consulta() {
 
-const navigation = useNavigation(); 
-const tab = createMaterialTopTabNavigator();
+    const navigation = useNavigation();
+    const tab = createMaterialTopTabNavigator();
 
-return (
-    <View style={style.container}>
-        <View style={style.div}>
-            <View style={style.topBar}>
-                    <Image source={require("../../assets/logoZap.png")} 
-                    style={{
-                    width: 64,
-                    height: 64,
-                    }}>
+    return (
+        <View style={style.container}>
+            <View style={style.div}>
+                <View style={style.topBar}>
+                    <Image source={require("../../assets/logoZap.png")}
+                        style={{
+                            width: 64,
+                            height: 64,
+                        }}>
                     </Image>
                     <Text style={style.user}>DETALHES E PAGAMENTOS</Text>
-                    
-                    <TouchableOpacity onPress={()=>navigation.navigate('Welcome')}>
-                        <Image source={require("../../assets/exit.png")} 
-                        onPress={()=>navigation.navigate('Welcome')}
-                        style={{
-                        width: 40,
-                        height:46,
-                        }}>
+
+                    <TouchableOpacity onPress={() => navigation.navigate('Welcome')}>
+                        <Image source={require("../../assets/exit.png")}
+                            onPress={() => navigation.navigate('Welcome')}
+                            style={{
+                                width: 40,
+                                height: 46,
+                            }}>
                         </Image>
                     </TouchableOpacity>
-            </View> 
+                </View>
 
-                        {/* INICIO PARTE CENTRAL DA TELA */}
-            <View style={style.central}>
-                <tab.Navigator>
-                    <tab.Screen name = "RESUMO DA COMPRA" component={HomeScreen}/>
-                    <tab.Screen name = "ÁREA DE PAGAMENTO" component={CadastroScreen}/>
-                </tab.Navigator>
+                {/* INICIO PARTE CENTRAL DA TELA */}
+                <View style={style.central}>
+                    <tab.Navigator>
+                        <tab.Screen name="RESUMO DA COMPRA" component={HomeScreen} />
+                        <tab.Screen name="ÁREA DE PAGAMENTO" component={AreaDePagamento} />
+                    </tab.Navigator>
+                </View>
             </View>
         </View>
-    </View>
     )
 }
 
 const style = StyleSheet.create({
-    container:{
-        flex:1,
-        backgroundColor:'#fff',
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
     },
-    div:{
-        flex:6,
-        flexDirection:'column',
-        backgroundColor:'#fff',
+    div: {
+        flex: 6,
+        flexDirection: 'column',
+        backgroundColor: '#fff',
 
     },
-    topBar:{
+    topBar: {
         flexDirection: "row",
         backgroundColor: '#069D07',
         alignItems: "center",
         justifyContent: "space-between",
         padding: 10,
-        },
-    user:{
+    },
+    user: {
         fontSize: 32,
         fontWeight: 'bold',
         color: '#fff',
-        },
-    central:{
-        felx:1,
-        justifyContent:'center',
-        height:'100%',
+    },
+    central: {
+        felx: 1,
+        justifyContent: 'center',
+        height: '100%',
 
     },
-    novoCartao:{
+    novoCartao: {
         flexDirection: 'column',
         alignItems: 'center',
-        
+
     },
-    inputNome:{
+    inputNome: {
         backgroundColor: '#fff',
         width: '100%',
-        height:60,
+        height: 60,
         marginBottom: 25,
         color: '#222',
         fontSize: 24,
@@ -111,10 +108,10 @@ const style = StyleSheet.create({
         padding: 10,
         textAlign: 'center',
     },
-    inputNumeroCartao:{
+    inputNumeroCartao: {
         backgroundColor: '#fff',
         width: '100%',
-        height:60,
+        height: 60,
         marginBottom: 25,
         color: '#222',
         fontSize: 24,
@@ -122,10 +119,10 @@ const style = StyleSheet.create({
         padding: 10,
         textAlign: 'center',
     },
-    inputValidade:{
+    inputValidade: {
         backgroundColor: '#fff',
         width: '40%',
-        height:60,
+        height: 60,
         marginBottom: 25,
         color: '#222',
         fontSize: 24,
@@ -133,10 +130,10 @@ const style = StyleSheet.create({
         padding: 10,
         textAlign: 'center',
     },
-    inputCV:{
+    inputCV: {
         backgroundColor: '#fff',
         width: '35%',
-        height:60,
+        height: 60,
         marginBottom: 25,
         color: '#222',
         fontSize: 24,
@@ -144,40 +141,40 @@ const style = StyleSheet.create({
         padding: 10,
         textAlign: 'center',
     },
-    btnSalvar:{
-        backgroundColor:'#069D07',
+    btnSalvar: {
+        backgroundColor: '#069D07',
         color: '#fff',
-        fontSize:24,
-        fontWeight:'bold',
+        fontSize: 24,
+        fontWeight: 'bold',
         borderRadius: 50,
         padding: 25,
-        width:270,
-        textAlign:'center'
+        width: 270,
+        textAlign: 'center'
     },
-    cartaoExistente:{
+    cartaoExistente: {
         flexDirection: 'column',
         alignItems: 'center',
     },
-    cartaoCadastrado:{
-        fontSize:25,
-        marginTop:20,
-        
+    cartaoCadastrado: {
+        fontSize: 25,
+        marginTop: 20,
+
     },
-    containerBtn:{
-        flex:1,
+    containerBtn: {
+        flex: 1,
         flexDirection: 'row-reverse',
-        justifyContent:'space-between',
+        justifyContent: 'space-between',
         paddingLeft: 30,
         paddingRight: 30
     },
-    btnPagar:{
-        backgroundColor:'#069D07',
+    btnPagar: {
+        backgroundColor: '#069D07',
         color: '#fff',
-        fontSize:24,
-        fontWeight:'bold',
+        fontSize: 24,
+        fontWeight: 'bold',
         borderRadius: 50,
         padding: 25,
-        width:270,
+        width: 270,
         textAlign: 'center',
     },
 })

@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Welcome from '../pages/Welcome';
-import SingIn from '../pages/Signin';
+import DetalhesPedidos from '../pages/DetalhesPedidos'
 import Consulta from '../pages/Consulta';
 import SelecionarPagamento from '../pages/SelecionarPagamento';
 import PagamentoPix from '../pages/PagamentoPix';
@@ -20,8 +20,8 @@ export default function Routes(){
             />
             
             <Stack.Screen
-            name = "SingIn"
-            component={SingIn}
+            name = "DetalhesPedidos"
+            component={DetalhesPedidos}
             options={{ headerShown: false}}
             />
 
