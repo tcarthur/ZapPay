@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Welcome from '../pages/Welcome';
 import DetalhesPedidos from '../pages/DetalhesPedidos'
-import pagamentoConcluido from "../pages/PagamentoConcluido/pagamentoConcluido";
+import DetalhesPagamento from "../pages/DetalhesPagamento";
 
 const Stack = createNativeStackNavigator();
 
@@ -22,10 +22,12 @@ export default function Routes(){
             />
             
             <Stack.Screen
-            name = "pagamentoConcluido"
-            component={pagamentoConcluido}
+            name = "DetalhesPagamento"
+            component={DetalhesPagamento}
             options={{ headerShown: false}}
             />
+            
+
         </Stack.Navigator>
     )
 }

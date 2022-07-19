@@ -49,7 +49,7 @@ export default function DetalhesPedidos() {
           </DataTable.Header>
           <TouchableOpacity
             style={{ marginVertical: 20 }}
-            onPress={() => navigation.navigate('')}>
+            onPress={() => navigation.navigate('DetalhesPagamento')}>
               <Descricao/>
           </TouchableOpacity>
 

@@ -21,13 +21,11 @@ export  class ListaItens extends Component{
 
     render(){
       return(
-        <View>
           <FlatList
           data={this.state.itens}
           keyExtractor={item => item.id}
           renderItem={({item}) => <Item data={item} />}
           />
-        </View>
       )
     }
 }
