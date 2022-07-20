@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, TouchableOpacity, SafeAreaView, ScrollView,} from 'react-native'
+import { View, StyleSheet, Text, TouchableOpacity, SafeAreaView,} from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import { ListaItens } from './itensAPI';
 
@@ -12,11 +12,9 @@ export default function ResumoDaCompra() {
         <View style={style.screen}>
             <View style={style.container}>
                 <SafeAreaView style={style.containerResumo}>
-                    <ScrollView>
                         <View>
                             <ListaItens/>
                         </View>
-                    </ScrollView>
                 </SafeAreaView>
             </View>
             <View style={style.containerBtn}>

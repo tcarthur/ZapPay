@@ -2,12 +2,12 @@ import { View, Text, StyleSheet, Image, TouchableOpacity,} from 'react-native'
 import React from 'react'
 import { useNavigation, } from '@react-navigation/native'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-
+import ResumoDaCompra from '../../components/resumoDaCompra'
 
 function HomeScreen() {
     return (
         <View style={{ flex: 1, }}>
-            
+            <ResumoDaCompra/>
         </View>
     );
 }
