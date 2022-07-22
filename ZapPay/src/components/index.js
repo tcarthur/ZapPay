@@ -1,7 +1,7 @@
 import React,{Component} from "react";
 import {View,Text,StyleSheet} from 'react-native'
 import { DataTable } from 'react-native-paper'
-import ImagemProduto from '../pages/DetalhesPagamento/imageProduto'
+import ImagemProduto from './../components/imageProduto'
 
 
 export  class Item extends Component {

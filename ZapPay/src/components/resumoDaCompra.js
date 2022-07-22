@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, TouchableOpacity, SafeAreaView, VirtualizedList, Modal, Alert, ViewPagerAndroidBase, VirtualizedList, } from 'react-native'
+import { View, StyleSheet, Text, TouchableOpacity, SafeAreaView, ScrollView, } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import { ListaItens } from './itensAPI';
 
@@ -12,11 +12,12 @@ export default function ResumoDaCompra() {
         <View style={style.screen}>
             <View style={style.container}>
                 <SafeAreaView style={style.containerResumo}>
-                    <VirtualizedList>
+                    <ScrollView
+                    horizontal={true}>
                         <View>
                             <ListaItens />
                         </View>
-                    </VirtualizedList>
+                    </ScrollView>
                 </SafeAreaView>
             </View>
             <View style={style.containerBtn}>

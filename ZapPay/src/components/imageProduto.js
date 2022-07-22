@@ -5,7 +5,7 @@ export default class ImagemProduto extends Component {
 render() {
     return (
         <View style={style.containerImage}>
-            <Image style={style.imageProduct} source={require('../../image/servico.png')}/>
+            <Image style={style.imageProduct} source={require('../image/servico.png')}/>
         </View>
     )
 }

@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { View,List,Text } from "react-native";
-import api from "../../service/Api";
-import {Item,Usuario,DescricaoProduto} from "../../components";
-import { List } from "react-native-paper";
+import { View,FlatList,} from "react-native";
+import api from "../service/Api";
+import {Item,Usuario,DescricaoProduto} from "./index";
 
 export  class ListaItens extends Component{
 
@@ -23,7 +22,7 @@ export  class ListaItens extends Component{
     render(){
       return(
         <View>
-          <List
+          <FlatList
           data={this.state.itens}
           keyExtractor={item => item.id}
           renderItem={({item}) => <Item data={item} />}
@@ -50,13 +49,11 @@ export class NomeUser extends Component{
 
     render(){
       return(
-        <View>
-          <Text
+          <FlatList
           data={this.state.user}
           keyExtractor={item => item.id}
           renderItem={({item}) => <Usuario data={item} />}
           />
-        </View>
       )
     }
 }
@@ -80,7 +77,7 @@ export class Descricao extends Component{
     render(){
       return(
         <View>
-          <List
+          <FlatList
           data={this.state.descricao}
           keyExtractor={item => item.id}
           renderItem={({item}) => <DescricaoProduto data={item} />}
