@@ -1,47 +1,20 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { View, KeyboardAvoidingView, TextInput, TouchableOpacity, Text, StyleSheet, Animated, Alert, } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import { useNavigation } from '@react-navigation/native';
-import axios from 'axios';
+import Spinner from 'react-native-loading-spinner-overlay';
+import { AuthContext } from '../../context/AuthContext';
 
-export default function SignIn() {
-
-
+const SignIn = ({ }) => {
     const [logo] = useState(new Animated.ValueXY({ x: 277, y: 277 }));
     const [email, setEmail] = useState(null)
     const [password, setPassword] = useState(null)
-    const [isLoading, setLoading] = useState(false)
-
-
-    const entrar = () => {
-            axios.post('https://62c87c2d0f32635590d96d8d.mockapi.io/apiCliente/v1/users', {
-            email: email,
-            password: password
-        })
-            .then(function (response) {
-                setLoading(false)
-                navigation.reset({
-                    index: 0,
-                    routes: [{ name: "DetalhesPedidos" }]
-                })
-            })
-            .catch((error) => {
-                setLoading(false)
-                Alert, alert("Usuário ou senha inválido")
-            })
-
-
-    }
-
-
-
-
-    const navigation = useNavigation();
+    const { isLoading, login } = useContext(AuthContext);
 
 
     return (
         <KeyboardAvoidingView style={style.background}>
             <View style={style.containerLogo}>
+                <Spinner visible={isLoading}/>
                 <Animatable.Image
                     animation="flipInY"
                     delay={400}
@@ -52,37 +25,31 @@ export default function SignIn() {
                     source={require("../../assets/logoZap.png")}
                 />
             </View>
-            {isLoading &&
-                <Text>CARREGANDO...</Text>
-            }
 
-            {!isLoading &&
-                <Animatable.View
-                    delay={1000}
-                    animation="fadeInUp"
+            <Animatable.View
+                delay={1000}
+                animation="fadeInUp"
 
-                    style={[
-                        style.container,
-                    ]}>
-                    <TextInput style={style.input}
-                        placeholder="E-mail"
-                        leftIcon={{ type: 'font-awesome', name: 'envelope' }}
-                        onChangeText={() => setEmail}
-                        keyboardType="email-address"
-                    />
-                    <TextInput style={style.input} TextInput
-                        placeholder="Sua senha"
-                        leftIcon={{ type: 'font-awesome', name: 'lock' }}
-                        oonChageText={() => setPassword}
-                        secureTextEntry={true}
-                    />
-                    <TouchableOpacity style={style.btnAcessar}
-                        onPress={() => entrar()}
-                    >
-                        <Text style={style.submitText}>ENTRAR</Text>
-                    </TouchableOpacity>
-                </Animatable.View>
-            }
+                style={[
+                    style.container,
+                ]}>
+                <TextInput style={style.input}
+                    value={email}
+                    placeholder="E-mail"
+                    onChangeText={text => setEmail(text)}
+                />
+                <TextInput style={style.input} TextInput
+                    value={password}
+                    placeholder="INSIRA A SENHA"
+                    onChangeText={text => setPassword(text)}
+                    secureTextEntry
+                />
+                <TouchableOpacity style={style.btnAcessar}
+                    onPress={() => { login(email, password) }}
+                >
+                    <Text style={style.submitText}>ENTRAR</Text>
+                </TouchableOpacity>
+            </Animatable.View>
         </KeyboardAvoidingView>
     );
 }
@@ -130,3 +97,5 @@ const style = StyleSheet.create({
     }
 
 })
+
+export default SignIn;
