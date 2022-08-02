@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL:'https://62c87c2d0f32635590d96d8d.mockapi.io/'
+    baseURL:'http://sgw.zapgrafica.com.br:8081'
 })
 
 export default api;

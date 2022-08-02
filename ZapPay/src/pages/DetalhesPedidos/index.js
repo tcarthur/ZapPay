@@ -3,15 +3,15 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { DataTable } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native';
-import { NomeUser, Descricao } from '../../components/itensAPI';
+import Spinner from 'react-native-loading-spinner-overlay';
 
 export default function DetalhesPedidos() {
-
 
   const navigation = useNavigation();
 
   return (
     <View>
+      <Spinner visible={true}/>
       <View style={style.topBar}>
         <Image source={require("../../assets/logoZap.png")}
           style={{
@@ -20,7 +20,7 @@ export default function DetalhesPedidos() {
           }}>
         </Image>
         <View>
-          <NomeUser />
+          
         </View>
         <TouchableOpacity onPress={() => navigation.navigate('Welcome')}>
           <Image source={require("../../assets/exit.png")} style={{
@@ -50,10 +50,9 @@ export default function DetalhesPedidos() {
           <TouchableOpacity
             style={{ marginVertical: 20 }}
             onPress={() => navigation.navigate('DetalhesPagamento')}>
-            <Descricao />
           </TouchableOpacity>
 
-        </DataTable>
+        </DataTable> 
 
 
         <View style={style.alert}>
